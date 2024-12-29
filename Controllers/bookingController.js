@@ -25,7 +25,7 @@ exports.createBooking = async (req, res) => {
 
     res.status(201).json({
       userId: newBooking.userId,
-      user: `${firstName} ${lastName}`,
+      user: `${firstName} ${lastName ?? "unknow"}`,
       hotel: hotelName,
       bookingStartDate: startDate,
       bookingEndDate: endDate,

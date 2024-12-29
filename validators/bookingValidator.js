@@ -1,17 +1,26 @@
 module.exports.validateBooking = (req, res, next) => {
   const { firstName, lastName, startDate, endDate, hotelName } = req.body;
 
-  const validHotels = ["Grand Hotel", "Paradise Inn", "Ocean View"];
+  const validHotels = [
+    "Grand Hotel",
+    "Paradise Inn",
+    "Ocean View",
+    "Amman Grand Hotel",
+  ];
 
   if (!firstName || firstName.length < 3)
     return res
       .status(400)
       .json({ error: "First name must be at least 3 letters." });
 
-  if (!lastName || lastName.length < 3)
+  if (!lastName) {
+    return res.status(400).json({ error: "please enter your last name" });
+  }
+  if (lastName.length < 3) {
     return res
       .status(400)
       .json({ error: "Last name must be at least 3 letters." });
+  }
 
   if (!startDate || !endDate)
     return res.status(400).json({ error: "Start and end dates are required." });

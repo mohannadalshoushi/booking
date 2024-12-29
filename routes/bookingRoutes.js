@@ -1,9 +1,10 @@
 const express = require("express");
 const { createBooking } = require("../Controllers/bookingController");
 const Booking = require("../models/Booking");
+const { validateBooking } = require("../validators/bookingValidator");
 const router = express.Router();
 
-router.post("/", createBooking);
+router.post("/", validateBooking, createBooking);
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
 
