@@ -1,0 +1,25 @@
+C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+.\mysql -u root -p
+
+USE booking_app;
+
+SHOW TABLES;
+
+INSERT INTO Hotels (name, location, createdAt, updatedAt)
+VALUES
+('Amman Grand Hotel', 'Amman', NOW(), NOW()),
+('Dead Sea Resort', 'Dead Sea', NOW(), NOW()),
+('Petra Mountain Lodge', 'Petra', NOW(), NOW());
+
+
+
+INSERT INTO Hotels (name, location, description, image, createdAt, updatedAt)
+VALUES
+  ('Grand Hotel', 'Amman', 'A luxurious hotel in the heart of Amman.', 'https://images.pexels.com/photos/13871317/pexels-photo-13871317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', NOW(), NOW()),
+  ('Paradise Inn', 'Dead Sea', 'A serene retreat by the Dead Sea.', 'https://images.pexels.com/photos/13871318/pexels-photo-13871318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', NOW(), NOW()),
+  ('Ocean View', 'Aqaba', 'A beachfront hotel with stunning views of the Red Sea.', 'https://images.pexels.com/photos/6580216/pexels-photo-6580216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', NOW(), NOW()),
+  ('Amman Grand Hotel', 'Amman', 'A modern hotel offering premium amenities.', 'https://images.pexels.com/photos/14036241/pexels-photo-14036241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', NOW(), NOW());
+
+
+SELECT * FROM Hotels;
